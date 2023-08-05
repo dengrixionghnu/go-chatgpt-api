@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: go build -ldflags="-w -s" -o go-chatgpt-api main.go
     startCommand: ./go-chatgpt-api
-  watchtower:
+  - watchtower:
     container_name: watchtower
     image: containrrr/watchtower
     volumes:
