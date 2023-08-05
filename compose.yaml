@@ -15,3 +15,10 @@ services:
       - OPENAI_PASSWORD=
       - CONTINUE_SIGNAL=
     restart: unless-stopped
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: --interval 3600
+    restart: unless-stopped
